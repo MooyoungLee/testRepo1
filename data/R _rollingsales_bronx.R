@@ -55,4 +55,5 @@ summary(bx.homes[which(bx.homes$sale.price.n<100000),])
 ## remove outliers that seem like they weren't actual sales
 bx.homes$outliers <- (log10(bx.homes$sale.price.n) <=5) + 0
 bx.homes <- bx.homes[which(bx.homes$outliers==0),]
-plot(log10(bx.homes$gross.sqft),log10(bx.homes$sale.price.n))
+
+write.csv(bx.homes,file="data/bronx_rollingsales_homes_clean.csv",quote=T)
