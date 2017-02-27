@@ -1,5 +1,14 @@
 # testRepo1
 
+#### Authors:
+      
+  Albert Asuncion
+  
+  Mooyoung Lee
+  
+  Ian Kinskey
+
+####  Project Description
 Project contains data file (.csv format), R script, and analysis products.
 
 Data file contains data on property sold during a twelve-month period in New York City's Bronx borough for all tax classes, including the neighborhood, building type, square footage and more.  
