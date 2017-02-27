@@ -14,3 +14,8 @@ The following procedures were carried out to clean the data:
 4. Eliminating lead digits for the gross.sqft and year.built variables
 5. Removal of observations which did not appear to be real sales
 6. Removal of outliers (log(sale.price) > 5)
+
+### Analysis
+
+The log (base 10) of the sales price was compared to the log (base 10) of the square footage.
+![Image of Yaktocat](https://github.com/Xibalba1/testRepo1/blob/master/analysis/logsalepriceVlogsqft.png)
