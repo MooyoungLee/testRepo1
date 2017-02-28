@@ -18,4 +18,4 @@ The following procedures were carried out to clean the data:
 ### Analysis
 
 The log (base 10) of the sales price was compared to the log (base 10) of the square footage.
-![Image of Yaktocat](https://github.com/Xibalba1/testRepo1/blob/master/analysis/logsalepriceVlogsqft.png)
+![SFH ](https://github.com/Xibalba1/testRepo1/blob/master/analysis/logsalepriceVlogsqft.png)
