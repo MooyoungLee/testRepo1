@@ -39,6 +39,8 @@ bx$year.built <- as.numeric(as.character(bx$year.built))
 attach(bx)
 hist(sale.price.n)
 
+## calculate price.per.sqft
+price.per.sqft <- bx.homes$sale.price.n / bx.homes$gross.sqft
 
 ## keep only the actual sales
 bx.sale <- bx[bx$sale.price.n!=0,]
