@@ -34,4 +34,4 @@ Following procedures were carried out to find the most influential variable to t
 6. ‘Land.sqft’ and ‘block’ were the most significant inputs with the ‘sale price / gross sqft’
 7. Selected influential variables are checked with correlation function, cor().
 8. Linear fit model is compared with actual ‘sale price / gross sqft’ values in a plot
-https://github.com/MooyoungLee/testRepo1/blob/master/analysis/BronxPricePerSqft.png
+![SFH ](https://github.com/MooyoungLee/testRepo1/blob/master/analysis/BronxPricePerSqft.png)
