@@ -37,3 +37,49 @@ Following procedures were carried out to find the most influential variable to t
   7. Selected influential variables are checked with correlation function, cor().
   8. Linear fit model is compared with actual ‘sale price / gross sqft’ values in a plot
 ![SFH ](https://github.com/MooyoungLee/testRepo1/blob/master/analysis/BronxPricePerSqft.png)
+
+Linear Regression Code
+
+```{r}
+## Mooyoung 2017/2/27 
+# Investigation for the most influential factor to the price/sqft
+bk.homes$PricePerSqft = bk.homes$sale.price.n/bk.homes$gross.sqft    # sale price per sqft calculation
+
+bk.homes = bk.homes[-which(is.na(bk.homes$PricePerSqft)),]           # omit NA rows
+bk.homes = bk.homes[-which.max(bk.homes$PricePerSqft),]              # delete an outlier
+hist(bk.homes$PricePerSqft)                                          # check distribution
+summary(bk.homes$PricePerSqft)                                       # check summary stat
+plot(bk.homes$PricePerSqft,bk.homes$PricePerSqft)                    # check distribution w/o an outlier
+
+## Linear Model
+
+# assigning only numerical column variables into simple variables for regressino analysis
+y = bk.homes$PricePerSqft
+x1 = bk.homes$year.built
+x2 = bk.homes$land.sqft
+x3 = bk.homes$block
+x4 = bk.homes$lot
+
+fit = lm(y~x1+x2+x3+x4, data = bk.homes)   # Linear fit model function
+summary(fit) # show results of fit model: x2 and x3 are the significant variables
+
+# checking the correlation coefficients
+cor(x1, y) 
+cor(x2, y)
+cor(x3, y)
+cor(x4, y)
+
+CorrCoef = cor(x2*0.04216+x3*0.02657-.10092, y)  # Correlation coefficients with model found
+
+# Plot Actual 'Price/Sqft' vs. 'Prediction Model with only significant variables'
+
+yAct = sort(y)                                        # sort the 'PricePerSqft' values to compare
+yfit = sort(x2*0.04216+x3*0.02657-.10092)             # sorting fit model outputs
+plot(c(1:length(yAct)), yAct, type = "l", col = "red",
+     main = "Linear Regression Fit", 
+     xlab = "Sample Number (Sorted)", ylab = "Price/Sqft")      # plot yAct line
+lines(c(1:length(yAct)), xfit, col = "green")                   # Overlaying yFit line
+legend(0,1500, c("Price/Sqft", "Model = Land.Sqft + Block"), 
+       lty = c(1,1), lwd = c(2.5,2.5), col = c("red","green"))  # adding legend
+text(500, 800, labels = paste("Corr.Coef = ", toString(round(CorrCoef,2))))     # Adding CorrCoef text
+```
