@@ -24,11 +24,11 @@ The log (base 10) of the sales price was compared to the log (base 10) of the sq
 ## Fitting Linear Model
 
 Following procedures were carried out to find the most influential variable to the home price per square feet value.
-(Extra data clean-up)
+*(Extra data clean-up)
   1. Divided "sale.price" vector with "gross.sqft".
   2. Removed NA rows using -which(is.na()) .
   3. Removed one max outlier by -which.max() function.
-(Linear Fit Model, y~x1+x2+x3+x4)
+*(Linear Fit Model, y~x1+x2+x3+x4)
   4. Where x1, x2, x3, x4 are ‘year.built’, ‘land.sqft’, ‘block’, ‘lot’ accordingly.
   5. Linear model coefficients are found by lm() and summary() functions.
   6. ‘Land.sqft’ and ‘block’ were the most significant inputs with the ‘sale price / gross sqft’
