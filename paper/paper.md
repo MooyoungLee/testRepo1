@@ -73,8 +73,8 @@ CorrCoef = cor(x2*0.04216+x3*0.02657-.10092, y)  # Correlation coefficients with
 
 # Plot Actual 'Price/Sqft' vs. 'Prediction Model with only significant variables'
 
-yAct = sort(y)                                        # sort the 'PricePerSqft' values to compare
-yfit = sort(x2*0.04216+x3*0.02657-.10092)             # sorting fit model outputs
+yAct = sort(y)                                                  # sort the 'PricePerSqft' values to compare
+yfit = sort(x2*0.04216+x3*0.02657-.10092)                       # sorting fit model outputs
 plot(c(1:length(yAct)), yAct, type = "l", col = "red",
      main = "Linear Regression Fit", 
      xlab = "Sample Number (Sorted)", ylab = "Price/Sqft")      # plot yAct line
